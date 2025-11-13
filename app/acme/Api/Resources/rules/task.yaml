@@ -1,0 +1,21 @@
+"project:task.create":
+    constraints:
+        project: "required|uuid|exists:projects,id"
+        name: "required|string|max:255|unique:tasks,name"
+
+"project:task.update":
+    constraints:
+        project: "required|uuid|exists:projects,id"
+        task: "required|uuid|exists:tasks,id"
+        name: "required|string|max:255|unique:tasks,name"
+
+"project:task.delete":
+    constraints:
+        project: "required|uuid|exists:projects,id"
+        task: "required|uuid|exists:tasks,id"
+
+"project:task.reorder":
+    constraints:
+        project: "required|uuid|exists:projects,id"
+        tasks: "required|array"
+        tasks.*: "required|uuid|exists:tasks,id"

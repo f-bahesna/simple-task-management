@@ -1,0 +1,6 @@
+authenticate:
+    type: message
+    message: authenticate
+    path: auth
+    methods: [POST]
+    rules: [authenticate]

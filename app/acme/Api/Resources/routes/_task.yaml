@@ -1,0 +1,33 @@
+project:create.task:
+    type: message
+    message: create-project-task
+    path: projects/{project}/task
+    methods: [POST]
+    options:
+        rules: ["project:task.create"]
+        withs:
+            - tasks
+
+project:update.task:
+    type: message
+    message: update-project-task
+    path: projects/{project}/tasks/{task}
+    methods: [PATCH]
+    options:
+        rules: ["project:task.update"]
+
+project:delete.task:
+    type: message
+    message: delete-project-task
+    path: projects/{project}/tasks/{task}/delete
+    methods: [DELETE]
+    options:
+        rules: [ "project:task.delete" ]
+
+project:reorder.task:
+    type: message
+    message: reorder-project-task
+    path: projects/{project}/task-reorder
+    methods: [PATCH]
+    options:
+        rules: ["project:task.reorder"]

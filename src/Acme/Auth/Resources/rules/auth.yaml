@@ -1,0 +1,7 @@
+authenticate:
+    constraints:
+        username: "nullable"
+        name: "nullable"
+        password: "nullable"
+        email: "nullable|email"
+        type: "required|in:apple,google,google_web,facebook,basic"

@@ -1,0 +1,10 @@
+projects:
+    type: resource
+    resource: project
+    path: projects
+    only: [index, show, store, update, destroy]
+    options:
+        withs: [tasks]
+        trans:
+            show:
+                - project-task-reorder
